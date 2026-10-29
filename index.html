@@ -23,58 +23,201 @@
     src="https://www.facebook.com/tr?id=899297616422553&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
+
         body {
-            background: linear-gradient(135deg, #072027, #203e43, #2c5364);
+            background: #090d16;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 50%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             padding: 20px;
         }
-        .container {
-            max-width: 450px;
+
+        .card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 35px 25px;
+            max-width: 420px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(34, 197, 94, 0.15);
+            position: relative;
+            overflow: hidden;
         }
-        .btn {
-            background: #22c55e;
-            color: #fff;
-            font-weight: bold;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #22c55e, #38bdf8);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .sub-title {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .stats-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
             font-size: 18px;
-            display: inline-block;
-            margin-bottom: 15px;
-            transition: background 0.3s ease;
+            font-weight: 700;
+            color: #38bdf8;
         }
+
+        .stat-label {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-btn 2s infinite;
+        }
+
         .btn:hover {
-            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.6);
+        }
+
+        .btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 18px;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.95); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.5; }
+            100% { transform: scale(0.95); opacity: 1; }
+        }
+
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="card">
+        <div class="badge">
+            <span class="badge-dot"></span> Official Telegram Channel
+        </div>
+
         <h1>Wicket Call Fix</h1>
-        <p style="color: #94a3b8; margin-bottom: 20px;">Official Telegram Channel se judein</p>
-        
-        <!-- Purana button wahi hai, bas click par currency wala event add kiya hai -->
-        <a href="https://t.me/+XilBMDMFRYcwNDQ1" class="btn" onclick="trackContactEvent();">Join Telegram Channel</a>
+        <p class="sub-title">Cricket Match Updates & Accurate Reports</p>
+
+        <div class="stats-box">
+            <div class="stat-item">
+                <span class="stat-value">98%+</span>
+                <span class="stat-label">Accuracy</span>
+            </div>
+            <div class="stat-item" style="border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); padding: 0 15px;">
+                <span class="stat-value">FREE</span>
+                <span class="stat-label">Entry</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">Active</span>
+                <span class="stat-label">Community</span>
+            </div>
+        </div>
+
+        <!-- Conversion Button with Meta Event Tracking -->
+        <a href="https://t.me/+XilBMDMFRYcwNDQ1" class="btn" onclick="trackContactEvent();">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.43 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.13-.03.22z"/>
+            </svg>
+            JOIN TELEGRAM NOW
+        </a>
+
+        <p class="footer-note">⚡ Click above to get instant match calls & reports</p>
     </div>
 
     <script>
